@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/sections/hero";
 import { ProblemSection } from "@/components/sections/problem";
+import { DreamLifestyleSection } from "@/components/sections/dream-lifestyle";
 import { SolutionSection } from "@/components/sections/solution";
 import { SaasToolsSection } from "@/components/sections/saas-tools";
 import { SocialProofSection } from "@/components/sections/social-proof";
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="min-h-screen pt-16">
       <HeroSection />
       <ProblemSection />
+      <DreamLifestyleSection />
       <SolutionSection />
       <SaasToolsSection />
       <SocialProofSection />

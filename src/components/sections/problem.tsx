@@ -7,24 +7,24 @@ import { AnimatedCounter } from "@/components/ui/animated-counter"
 
 const painPoints = [
   {
+    icon: Clock,
+    title: "Trading your best years for a paycheck",
+    description: "Stuck in a soul-crushing 9-5 while watching others travel the world and live freely.",
+  },
+  {
     icon: XCircle,
-    title: "Posting content that gets no views",
-    description: "You're creating content but it feels like you're shouting into the void with minimal engagement.",
+    title: "Missing life's precious moments",
+    description: "Can't attend your kid's game or take that trip because you need 'permission' from a boss.",
   },
   {
     icon: TrendingDown,
-    title: "Watching others go viral while you struggle",
-    description: "Seeing creators with less experience blow up while your content stays stuck at low view counts.",
-  },
-  {
-    icon: Clock,
-    title: "Working for months with no income",
-    description: "Putting in the hours but not seeing any financial return on your content creation efforts.",
+    title: "Living paycheck to paycheck",
+    description: "Working 40+ hours a week but still stressed about bills and can't afford the life you want.",
   },
   {
     icon: AlertTriangle,
-    title: "Feeling lost in the algorithm",
-    description: "The constant platform changes leave you confused about what actually works anymore.",
+    title: "Dreams dying on the vine",
+    description: "That business idea, that trip, that lifestyle - all waiting for 'someday' that never comes.",
   },
 ]
 
@@ -43,13 +43,13 @@ export function ProblemSection() {
             className="space-y-4"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              Have You Been:
+              Is This Your Life Right Now?
             </h2>
             <p className="text-xl text-muted-foreground">
-              "Your current strategy…"
+              "Another day, another dollar, another dream deferred..."
             </p>
             <p className="text-lg font-semibold text-destructive mt-2">
-              Will keep you broke forever while others get ahead using insider secrets
+              While you're stuck in the rat race, others are living your dream life
             </p>
           </motion.div>
 

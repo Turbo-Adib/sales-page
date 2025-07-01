@@ -25,8 +25,11 @@ export function SocialProofSection() {
             className="text-center space-y-4 mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              Here are a Few <span className="text-accent">results</span> from using our formula….
+              From Cubicle to <span className="text-accent">Paradise</span> in 12 Months
             </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              These creators escaped the 9-5 and now live life on their own terms
+            </p>
           </motion.div>
 
           {/* Success Examples Grid */}
@@ -38,8 +41,8 @@ export function SocialProofSection() {
               viewport={{ once: true }}
               className="bg-card border border-border rounded-xl p-6 text-center"
             >
-              <h3 className="text-2xl font-bold text-primary mb-2">$31K Made In 28 Days</h3>
-              <p className="text-muted-foreground">Built using our exact blueprint.</p>
+              <h3 className="text-2xl font-bold text-primary mb-2">Quit Job After 3 Months</h3>
+              <p className="text-muted-foreground">Now working from Bali making $15K/month</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -48,8 +51,8 @@ export function SocialProofSection() {
               viewport={{ once: true }}
               className="bg-card border border-border rounded-xl p-6 text-center"
             >
-              <h3 className="text-2xl font-bold text-accent mb-2">$331K+ in Revenue</h3>
-              <p className="text-muted-foreground">Built using our exact blueprint</p>
+              <h3 className="text-2xl font-bold text-accent mb-2">12 Countries in 12 Months</h3>
+              <p className="text-muted-foreground">Living the dream while earning $200K+/year</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -58,8 +61,8 @@ export function SocialProofSection() {
               viewport={{ once: true }}
               className="bg-card border border-border rounded-xl p-6 text-center"
             >
-              <h3 className="text-2xl font-bold text-primary mb-2">284K+ Subs in 28 Days</h3>
-              <p className="text-muted-foreground">Built using our exact blueprint</p>
+              <h3 className="text-2xl font-bold text-primary mb-2">Retired Parents at 25</h3>
+              <p className="text-muted-foreground">From broke college student to 6-figure creator</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -68,8 +71,8 @@ export function SocialProofSection() {
               viewport={{ once: true }}
               className="bg-card border border-border rounded-xl p-6 text-center"
             >
-              <h3 className="text-2xl font-bold text-accent mb-2">From 0 to 100K Subs 2x</h3>
-              <p className="text-muted-foreground">Built using our exact blueprint</p>
+              <h3 className="text-2xl font-bold text-accent mb-2">4-Hour Work Days</h3>
+              <p className="text-muted-foreground">More money, more time, more freedom</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -78,8 +81,8 @@ export function SocialProofSection() {
               viewport={{ once: true }}
               className="bg-card border border-border rounded-xl p-6 text-center"
             >
-              <h3 className="text-2xl font-bold text-primary mb-2">210.7M Views in 28 Days</h3>
-              <p className="text-muted-foreground">Built using our exact blueprint</p>
+              <h3 className="text-2xl font-bold text-primary mb-2">Bought Dream Home at 23</h3>
+              <p className="text-muted-foreground">From mom's basement to beachfront property</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -88,8 +91,8 @@ export function SocialProofSection() {
               viewport={{ once: true }}
               className="bg-card border border-border rounded-xl p-6 text-center"
             >
-              <h3 className="text-2xl font-bold text-accent mb-2">$31K Made In 28 Days</h3>
-              <p className="text-muted-foreground">Built using our exact blueprint.</p>
+              <h3 className="text-2xl font-bold text-accent mb-2">Family Time Every Day</h3>
+              <p className="text-muted-foreground">Never miss another moment that matters</p>
             </motion.div>
           </div>
 

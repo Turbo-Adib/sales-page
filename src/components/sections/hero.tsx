@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/config/site"
-import { ArrowRight, PlayCircle, Users, TrendingUp, Shield, Zap, Star } from "lucide-react"
+import { ArrowRight, PlayCircle, Users, TrendingUp, Shield, Zap, Star, Plane, Clock, MapPin, Home } from "lucide-react"
 import { useState } from "react"
 
 export function HeroSection() {
@@ -49,8 +49,8 @@ export function HeroSection() {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent"
             />
-            <Users className="w-4 h-4 relative z-10" />
-            <span className="relative z-10">Join 500+ Creators Making $10K+/Mo</span>
+            <Plane className="w-4 h-4 relative z-10" />
+            <span className="relative z-10">500+ Creators Living The Dream Life</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -67,10 +67,10 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
           >
-            Build a{" "}
-            <span className="text-primary">6-Figure Creator Business</span>
+            Quit Your 9-5 and{" "}
+            <span className="text-primary">Travel The World</span>
             <br />
-            <span className="text-muted-foreground">using Our Proven Systems</span>
+            While Making <span className="text-accent">$10K+/Month</span> as a Creator
           </motion.h1>
 
           {/* Subheadline */}
@@ -80,9 +80,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground max-w-3xl"
           >
-            Join{" "}
-            <span className="font-semibold text-foreground">500+ Creators Unlocking $10K+/Mo</span>{" "}
-            with Our Proven Content Creation System
+            500+ creators escaped the rat race and now work from{" "}
+            <span className="font-semibold text-foreground">Bali beaches, Paris cafes, and anywhere they want</span>{" "}
+            using our viral content system
           </motion.p>
 
           {/* CTA Buttons */}
@@ -98,7 +98,7 @@ export function HeroSection() {
               className="w-full sm:w-auto group"
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Join Now (Limited Spots Left)
+              Start Your Freedom Journey
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -108,8 +108,33 @@ export function HeroSection() {
               onClick={() => setIsVideoModalOpen(true)}
             >
               <PlayCircle className="mr-2 h-5 w-5" />
-              See Proof →
+              See The Lifestyle →
             </Button>
+          </motion.div>
+
+          {/* Lifestyle Benefits */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-sm"
+          >
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <MapPin className="w-4 h-4 text-primary" />
+              <span>Work From Anywhere</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Clock className="w-4 h-4 text-accent" />
+              <span>Be Your Own Boss</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Home className="w-4 h-4 text-primary" />
+              <span>More Family Time</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <TrendingUp className="w-4 h-4 text-accent" />
+              <span>Unlimited Income</span>
+            </div>
           </motion.div>
 
           {/* Trust Indicators */}

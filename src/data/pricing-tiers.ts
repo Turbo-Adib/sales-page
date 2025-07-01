@@ -34,8 +34,8 @@ export const pricingTiers: PricingTier[] = [
     id: "pro",
     name: "Pro",
     tagline: "Best value for serious creators",
-    price: 49.99,
-    originalPrice: 49.99,
+    price: 49,
+    originalPrice: 49,
     billingPeriod: "month",
     popular: true,
     features: [
