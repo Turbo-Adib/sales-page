@@ -16,8 +16,8 @@ export const pricingTiers: PricingTier[] = [
     id: "starter",
     name: "Basic",
     tagline: "Perfect for beginners",
-    price: 39.99,
-    originalPrice: 39.99,
+    price: 39,
+    originalPrice: 39,
     billingPeriod: "month",
     features: [
       "Access to Private Community",

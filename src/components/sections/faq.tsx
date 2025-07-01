@@ -18,7 +18,7 @@ export function FAQSection() {
   }
 
   return (
-    <section className="py-20 md:py-32 bg-background relative">
+    <section id="faq" className="py-20 md:py-32 bg-background relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/20 to-transparent" />
       
       <div className="container mx-auto px-4 md:px-6 relative">
@@ -36,7 +36,7 @@ export function FAQSection() {
               <span>Got Questions? We've Got Answers</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              FAQ
+              Frequently Asked Questions
             </h2>
           </motion.div>
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Check, Star, Shield, Zap, Crown } from "lucide-react"
+import { Check, Star, Shield, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { pricingTiers, comparisonFeatures } from "@/data/pricing-tiers"
 import { cn } from "@/lib/utils"
@@ -25,10 +25,10 @@ export function PricingSection() {
             className="text-center space-y-4 mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              Pricing
+              Choose Your <span className="text-primary">Creator Success Plan</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our pricing plans
+              Join 10,847+ creators earning $10K-$200K/month with our proven system
             </p>
           </motion.div>
 
@@ -45,11 +45,14 @@ export function PricingSection() {
             </span>
             <button
               onClick={() => setBillingCycle(billingCycle === "monthly" ? "yearly" : "monthly")}
-              className="relative inline-flex h-6 w-11 items-center rounded-full bg-muted"
+              className={cn(
+                "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
+                billingCycle === "yearly" ? "bg-accent" : "bg-muted"
+              )}
             >
               <span
                 className={cn(
-                  "inline-block h-4 w-4 transform rounded-full bg-primary transition",
+                  "inline-block h-4 w-4 transform rounded-full bg-white transition",
                   billingCycle === "yearly" ? "translate-x-6" : "translate-x-1"
                 )}
               />
@@ -62,8 +65,20 @@ export function PricingSection() {
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {pricingTiers.map((tier, index) => {
-              const price = billingCycle === "yearly" ? Math.floor(tier.price * 0.65) : tier.price
-              const originalPrice = billingCycle === "yearly" ? Math.floor(tier.originalPrice * 0.65) : tier.originalPrice
+              // Set specific yearly prices
+              let yearlyPrice;
+              if (tier.id === "starter") {
+                yearlyPrice = 25;
+              } else if (tier.id === "pro") {
+                yearlyPrice = 33;
+              } else if (tier.id === "empire") {
+                yearlyPrice = 83;
+              } else {
+                yearlyPrice = Math.floor(tier.price * 0.65);
+              }
+              
+              const price = billingCycle === "yearly" ? yearlyPrice : tier.price
+              const originalPrice = tier.originalPrice
               
               return (
                 <motion.div
@@ -91,11 +106,11 @@ export function PricingSection() {
 
                   <div className="text-center mb-8">
                     <div className="flex items-baseline justify-center gap-2 mb-2">
-                      <span className="text-4xl font-bold">${billingCycle === "yearly" ? (price / 12).toFixed(2) : price.toFixed(2)}</span>
+                      <span className="text-4xl font-bold">${price.toFixed(0)}</span>
                       <span className="text-muted-foreground">/m</span>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      Price breakdown here
+                      {billingCycle === "yearly" ? "Billed annually" : "Billed monthly"}
                     </p>
                   </div>
 
@@ -129,6 +144,33 @@ export function PricingSection() {
               )
             })}
           </div>
+
+          {/* Recent Activity */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="space-y-3 mb-16 max-w-2xl mx-auto"
+          >
+            <p className="text-center text-sm text-muted-foreground mb-4">Recent Activity:</p>
+            {[
+              { name: "Jessica from California", time: "2 minutes ago" },
+              { name: "Michael from New York", time: "5 minutes ago" },
+              { name: "Ashley from Texas", time: "11 minutes ago" },
+            ].map((activity, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 + index * 0.1 }}
+                className="bg-muted/50 rounded-lg p-3 text-sm text-center"
+              >
+                <span className="font-medium">{activity.name}</span> just enrolled •{' '}
+                <span className="text-muted-foreground">{activity.time}</span>
+              </motion.div>
+            ))}
+          </motion.div>
 
           {/* Comparison Table */}
           <motion.div

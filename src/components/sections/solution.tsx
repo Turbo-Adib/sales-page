@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle2, Zap, Brain, Rocket, Target, Trophy, ArrowRight, Clock, TrendingUp, DollarSign, Users, BarChart3, Sparkles } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { CheckCircle2, Brain, Rocket, Target, Clock, TrendingUp, DollarSign, Sparkles, XCircle } from "lucide-react"
 
 const features = [
   {
@@ -31,7 +30,7 @@ const transformations = [
 
 export function SolutionSection() {
   return (
-    <section className="py-20 md:py-32 bg-background">
+    <section id="solution" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
@@ -266,61 +265,6 @@ export function SolutionSection() {
           </motion.div>
 
 
-          {/* Unique Mechanism */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center space-y-6"
-          >
-            <h3 className="text-2xl md:text-3xl font-bold">
-              A Proven System That Helps Creators Win
-            </h3>
-            
-            <div className="space-y-4 max-w-3xl mx-auto">
-              <div className="flex items-start gap-3 text-left">
-                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">Complete Clipper Course:</span> Discover viral moments instantly,
-                  edit in seconds, and launch polished clips everywhere
-                </p>
-              </div>
-              <div className="flex items-start gap-3 text-left">
-                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">Personal Brand Course:</span> Learn pro-level video creation,
-                  grow a standout personal brand, and monetize your content
-                </p>
-              </div>
-              <div className="flex items-start gap-3 text-left">
-                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">"Fix My Channel" Audit:</span> We'll review your content and
-                  hand you a clear, actionable list of exactly what to fix to grow
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-8 space-y-4">
-              <Button 
-                variant="cta" 
-                size="xl"
-                onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block mx-auto"
-              >
-                Join Now!
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block mx-auto"
-              >
-                See Everything You'll Learn
-              </Button>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

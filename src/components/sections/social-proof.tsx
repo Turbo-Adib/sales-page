@@ -11,7 +11,7 @@ export function SocialProofSection() {
   const featuredTestimonials = testimonials.filter(t => t.featured)
 
   return (
-    <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="testimonials" className="py-20 md:py-32 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
       
       <div className="container mx-auto px-4 md:px-6 relative">

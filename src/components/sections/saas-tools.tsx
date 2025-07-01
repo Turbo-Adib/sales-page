@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Sparkles, Brain, Zap, Lock, Mic, Video, Eye, TrendingUp } from "lucide-react"
+import { Sparkles, Brain, Zap, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const tools = [
@@ -33,32 +33,10 @@ const tools = [
   }
 ]
 
-const facelessBenefits = [
-  {
-    icon: Mic,
-    title: "Voice-Only Content",
-    description: "Master storytelling and narration techniques that captivate without showing your face"
-  },
-  {
-    icon: Video,
-    title: "Screen Recording Mastery",
-    description: "Create engaging tutorials, reactions, and commentary videos anonymously"
-  },
-  {
-    icon: Eye,
-    title: "Visual Storytelling",
-    description: "Use stock footage, animations, and graphics to tell compelling stories"
-  },
-  {
-    icon: Lock,
-    title: "Privacy Protected",
-    description: "Build a million-dollar brand while maintaining complete anonymity"
-  }
-]
 
 export function SaasToolsSection() {
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
+    <section id="tools" className="py-20 md:py-32 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/[0.02]" />
       
       <div className="container mx-auto px-4 md:px-6 relative">
@@ -121,54 +99,12 @@ export function SaasToolsSection() {
                 </ul>
 
                 <div className="flex items-center justify-between">
-                  <Button variant="outline" size="sm" asChild>
-                    <a href={tool.url} target="_blank" rel="noopener noreferrer">
-                      Preview Demo
-                    </a>
-                  </Button>
                   <p className="text-xs text-muted-foreground">Students Only Access</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Faceless Content Focus */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="bg-secondary/10 rounded-2xl p-8 md:p-12 mb-16"
-          >
-            <div className="text-center mb-12">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                80% Focused on <span className="text-primary">Faceless Content Creation</span>
-              </h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Perfect for introverts, privacy-conscious creators, or anyone who wants to build a 
-                massive following without being on camera
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {facelessBenefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 * index }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                    <benefit.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold mb-2">{benefit.title}</h4>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
 
           {/* Value Proposition */}
           <motion.div
