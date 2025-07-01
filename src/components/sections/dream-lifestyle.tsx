@@ -90,7 +90,7 @@ export function DreamLifestyleSection() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-destructive">✗</span>
-                    <span>Two weeks vacation a year (if you're lucky)</span>
+                    <span>Two weeks vacation a year (if you&apos;re lucky)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-destructive">✗</span>

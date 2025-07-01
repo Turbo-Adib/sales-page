@@ -7,7 +7,7 @@ import { ArrowRight, PlayCircle, Users, TrendingUp, Shield, Zap, Star, Plane, Cl
 import { useState } from "react"
 
 export function HeroSection() {
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background to-primary/5">
@@ -105,7 +105,10 @@ export function HeroSection() {
               variant="outline"
               size="xl"
               className="w-full sm:w-auto group"
-              onClick={() => setIsVideoModalOpen(true)}
+              onClick={() => {
+                setIsVideoPlaying(true)
+                document.getElementById('hero-video')?.scrollIntoView({ behavior: 'smooth' })
+              }}
             >
               <PlayCircle className="mr-2 h-5 w-5" />
               See The Lifestyle →
@@ -182,53 +185,45 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Hero Video Preview */}
+          {/* Hero Video Embed */}
           <motion.div
+            id="hero-video"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="relative w-full max-w-4xl mt-12 rounded-xl overflow-hidden shadow-2xl cursor-pointer group"
-            onClick={() => setIsVideoModalOpen(true)}
+            className="relative w-full max-w-4xl mt-12 rounded-xl overflow-hidden shadow-2xl"
           >
-            <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
-              <PlayCircle className="w-20 h-20 text-white relative z-10 group-hover:scale-110 transition-transform" />
-            </div>
-            <div className="absolute inset-0 ring-1 ring-inset ring-black/10" />
+            {!isVideoPlaying ? (
+              <div 
+                className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center cursor-pointer group"
+                onClick={() => setIsVideoPlaying(true)}
+              >
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+                <PlayCircle className="w-20 h-20 text-white relative z-10 group-hover:scale-110 transition-transform" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="text-sm font-medium">Watch the Video</p>
+                  <p className="text-xs opacity-80">See how creators are living their dream life</p>
+                </div>
+              </div>
+            ) : (
+              <div className="aspect-video bg-black">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/gU7ZMeSPJlM?autoplay=1"
+                  title="Creator Camp Academy - Live Your Dream Life"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            )}
+            <div className="absolute inset-0 ring-1 ring-inset ring-black/10 pointer-events-none" />
           </motion.div>
         </div>
       </div>
 
-      {/* Video Modal */}
-      {isVideoModalOpen && (
-        <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-          onClick={() => setIsVideoModalOpen(false)}
-        >
-          <div
-            className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/gU7ZMeSPJlM"
-              title="Course Preview"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-            <button
-              onClick={() => setIsVideoModalOpen(false)}
-              className="absolute top-4 right-4 text-white hover:text-gray-300"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   )
 }
